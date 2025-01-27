@@ -1,37 +1,30 @@
 public class SelectionSort implements Sorter {
 
-    public void sort(int[] input) {
-        System.out.println("Selection Sort!!!");
-    }
-}
-// Java program for implementation of Selection Sort
-import java.util.Arrays;
-
-class GfG {
-
-    static void selectionSort(int[] arr){
-        int n = arr.length;
+    // Selection Sort Implementation
+    private void selectionSort(int[] input) {
+        int n = input.length;
         for (int i = 0; i < n - 1; i++) {
-          
-            // Assume the current position holds
-            // the minimum element
+            // Assume the current position holds the minimum element
             int min_idx = i;
 
-            // Iterate through the unsorted portion
-            // to find the actual minimum
+            // Iterate through the unsorted portion to find the actual minimum
             for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[min_idx]) {
-                  
-                    // Update min_idx if a smaller element
-                    // is found
+                if (input[j] < input[min_idx]) {
+                    // Update min_idx if a smaller element is found
                     min_idx = j;
                 }
             }
 
-            // Move minimum element to its
-            // correct position
-            int temp = arr[i];
-            arr[i] = arr[min_idx];
-            arr[min_idx] = temp;           
+            // Move the minimum element to its correct position
+            int temp = input[i];
+            input[i] = input[min_idx];
+            input[min_idx] = temp;
         }
     }
+
+    // Override the sort method from the Sorter interface
+    @Override
+    public void sort(int[] input) {
+        selectionSort(input);
+    }
+}

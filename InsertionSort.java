@@ -1,6 +1,6 @@
 public class InsertionSort implements Sorter {
         /* Function to sort array using insertion sort */
-        void sort(int arr[])
+        public void sort(int arr[])
         {
             int n = arr.length;
             for (int i = 1; i < n; ++i) {
@@ -27,7 +27,4 @@ public class InsertionSort implements Sorter {
     
             System.out.println();
         }
-    public void sort(int[] input) {
-        System.out.println("Insertion Sort!!!");
-    }
 }
